@@ -27,7 +27,6 @@ class CreateParentsTable extends Migration {
 			$table->string('fmxm2', 40)->comment('父母或监护人2姓名');
 			$table->string('fmzjlx2', 24)->comment('父母或监护人2身份证件类型');
 			$table->string('fmzjhm2', 18)->comment('父母或监护人2身份证件号码');
-			$table->string('mm', 128)->comment('学生密码');
 			$table->timestamps();
 		});
 	}

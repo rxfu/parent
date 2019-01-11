@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Parent::class, function (Faker $faker) {
+$factory->define(App\Parents::class, function (Faker $faker) {
 	return [
 		'xh'   => $faker->unique()->randomNumber(),
 		'xm'   => $faker->name(),
