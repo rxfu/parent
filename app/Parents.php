@@ -18,6 +18,6 @@ class Parents extends Model {
 	];
 
 	public function user() {
-		return $this->belongsTo('App\User', 'username', 'xh');
+		return $this->belongsTo('App\User', 'xh', 'username');
 	}
 }

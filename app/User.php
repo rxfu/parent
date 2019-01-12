@@ -28,6 +28,6 @@ class User extends Authenticatable {
 	];
 
 	public function parent() {
-		return $this->hasOne('App\Parents', 'username', 'xh');
+		return $this->hasOne('App\Parents', 'xh', 'username');
 	}
 }

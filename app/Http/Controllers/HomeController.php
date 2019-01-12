@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Parents;
+use Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
@@ -37,14 +39,15 @@ class HomeController extends Controller {
 	public function parent(Request $request) {
 		if ($request->isMethod('put')) {
 			$request->validate([
+				'sfzz'    => 'required',
 				'fmzjhm2' => 'nullable',
 			]);
 
-			$student = Auth::user()->parent();
+			$student = Parents::whereXh(Auth::user()->username)->firstOrFail();
 			$student->fill($request->all());
 			$student->save();
 		}
 
-		return redirect('/home');
+		return redirect('home');
 	}
 }
