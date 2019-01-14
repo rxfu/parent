@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreParentRequest;
 use App\Parents;
 use Auth;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller {
 
@@ -36,13 +36,8 @@ class HomeController extends Controller {
 		return view('home', compact('types'));
 	}
 
-	public function parent(Request $request) {
+	public function parent(StoreParentRequest $request) {
 		if ($request->isMethod('put')) {
-			$request->validate([
-				'sfzz'    => 'required',
-				'fmzjhm2' => 'nullable',
-			]);
-
 			$student = Parents::whereXh(Auth::user()->username)->firstOrFail();
 			$student->fill($request->all());
 			$student->save();
