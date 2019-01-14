@@ -40,7 +40,7 @@ class Idnumber implements Rule {
 				}
 				$mod = $checksum % 11;
 
-				return $verifyNumberList[$mod] == subtr($id, 17, 1);
+				return $verifyNumberList[$mod] == substr($id, 17, 1);
 			}
 		}
 
